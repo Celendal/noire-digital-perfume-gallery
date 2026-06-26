@@ -1,0 +1,392 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-color: #050505;
+    --text-primary: #f0f0f0;
+    --text-secondary: #888888;
+    --accent: #d4af37; /* Subtle gold */
+    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --font-serif: "Playfair Display", "Didot", "Bodoni MT", "Times New Roman", serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Navigation */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 4rem;
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.logo {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+}
+
+.nav-links {
+    display: flex;
+    gap: 3rem;
+}
+
+.nav-links a {
+    position: relative;
+    transition: color 0.3s ease;
+    color: var(--text-secondary);
+}
+
+.nav-links a:hover {
+    color: var(--text-primary);
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--text-primary);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.cart a {
+    transition: color 0.3s ease;
+}
+
+.cart a:hover {
+    color: var(--accent);
+}
+
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+}
+
+/* Hero Section */
+.hero {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding: 0 4rem;
+    min-height: 100vh;
+    position: relative;
+}
+
+.hero-content {
+    flex: 1;
+    z-index: 10;
+    padding-top: 5rem;
+    max-width: 50%;
+}
+
+.headline {
+    font-family: var(--font-serif);
+    font-size: clamp(4rem, 8vw, 8rem);
+    font-weight: 300;
+    line-height: 1.1;
+    margin-bottom: 4rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.headline .line {
+    opacity: 0;
+    animation: fadeUp 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+.headline .line:nth-child(1) { animation-delay: 0.1s; }
+.headline .line:nth-child(2) { animation-delay: 0.3s; }
+.headline .line:nth-child(3) { animation-delay: 0.5s; }
+
+.headline .indent {
+    padding-left: 15%;
+    font-style: italic;
+    color: var(--text-secondary);
+}
+
+.subtext-container {
+    margin-bottom: 4rem;
+    opacity: 0;
+    animation: fadeUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) 0.8s forwards;
+}
+
+.subtext-title {
+    font-family: var(--font-serif);
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.05em;
+}
+
+.subtext-desc {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    max-width: 300px;
+    line-height: 1.6;
+}
+
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--text-secondary);
+    transition: all 0.3s ease;
+    opacity: 0;
+    animation: fadeUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) 1s forwards;
+}
+
+.cta-button:hover {
+    border-bottom-color: var(--text-primary);
+    padding-right: 1rem;
+}
+
+.cta-button .arrow {
+    margin-left: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.cta-button:hover .arrow {
+    transform: translateX(10px);
+}
+
+/* Visual Section (Right Side) */
+.hero-visual {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    position: relative;
+    opacity: 0;
+    animation: fadeIn 2s ease 0.5s forwards;
+}
+
+/* CSS Perfume Bottle */
+.css-bottle {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: scale(1.2);
+    transition: transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.css-bottle:hover {
+    transform: scale(1.25) translateY(-10px);
+}
+
+.bottle-cap {
+    width: 60px;
+    height: 70px;
+    background: linear-gradient(90deg, #111, #333, #111);
+    border-radius: 4px 4px 0 0;
+    box-shadow: inset 0 2px 5px rgba(255,255,255,0.2),
+                0 5px 10px rgba(0,0,0,0.5);
+    z-index: 3;
+    position: relative;
+}
+
+.bottle-cap::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 20%;
+    width: 10%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+}
+
+.bottle-neck {
+    width: 40px;
+    height: 20px;
+    background: linear-gradient(90deg, #d4af37, #f3e5ab, #d4af37); /* Gold neck */
+    z-index: 2;
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.5);
+}
+
+.bottle-body {
+    width: 180px;
+    height: 240px;
+    background: linear-gradient(135deg, rgba(30,30,30,0.9) 0%, rgba(10,10,10,0.95) 100%);
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 
+        inset -5px -5px 20px rgba(0,0,0,0.8),
+        inset 5px 5px 15px rgba(255,255,255,0.05),
+        0 20px 40px rgba(0,0,0,0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+/* Glass reflection effect */
+.bottle-body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 10%;
+    width: 20%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.03), transparent);
+    transform: skewX(-10deg);
+}
+
+/* Liquid gradient inside */
+.liquid-reflection {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 70%;
+    background: linear-gradient(to top, rgba(212, 175, 55, 0.1), transparent);
+    border-radius: 0 0 10px 10px;
+}
+
+.bottle-label {
+    position: relative;
+    z-index: 5;
+    background: #0a0a0a;
+    padding: 1.5rem 2rem;
+    font-family: var(--font-serif);
+    font-size: 1.2rem;
+    letter-spacing: 0.2em;
+    color: #e0e0e0;
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+
+.bottle-shadow {
+    width: 220px;
+    height: 20px;
+    background: radial-gradient(ellipse at center, rgba(0,0,0,0.8) 0%, transparent 70%);
+    margin-top: 10px;
+    border-radius: 50%;
+    filter: blur(5px);
+}
+
+/* Animations */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .headline {
+        font-size: clamp(3.5rem, 6vw, 5rem);
+    }
+    .navbar {
+        padding: 2rem;
+    }
+    .hero {
+        padding: 0 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 1.5rem;
+    }
+    
+    .nav-links {
+        display: none;
+    }
+    
+    .menu-toggle {
+        display: block;
+    }
+    
+    .hero {
+        flex-direction: column;
+        padding: 6rem 1.5rem 2rem;
+        justify-content: center;
+    }
+    
+    .hero-content {
+        max-width: 100%;
+        padding-top: 0;
+        text-align: center;
+        margin-bottom: 4rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .headline {
+        font-size: 3.5rem;
+        align-items: center;
+    }
+    
+    .headline .indent {
+        padding-left: 0;
+    }
+    
+    .subtext-desc {
+        margin: 0 auto;
+    }
+    
+    .hero-visual {
+        width: 100%;
+        height: auto;
+        padding: 2rem 0;
+    }
+    
+    .css-bottle {
+        transform: scale(0.9);
+    }
+    
+    .css-bottle:hover {
+        transform: scale(0.95) translateY(-5px);
+    }
+}
