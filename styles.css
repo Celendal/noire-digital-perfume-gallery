@@ -104,17 +104,17 @@ a {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: clamp(5.5rem, 10vw, 12rem);
+    gap: clamp(4.75rem, 8.5vw, 10.5rem);
     padding: 0 clamp(5.5rem, 7vw, 8rem);
     min-height: 100vh;
     position: relative;
 }
 
 .hero-content {
-    flex: 0 1 52%;
+    flex: 0 1 49%;
     z-index: 10;
     padding-top: 3.5rem;
-    max-width: 54rem;
+    max-width: 49rem;
 }
 
 .headline {
@@ -143,7 +143,7 @@ a {
 }
 
 .subtext-container {
-    margin-bottom: 3.25rem;
+    margin-bottom: 2.55rem;
     margin-left: 22%;
     opacity: 0;
     animation: fadeUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) 0.8s forwards;
@@ -193,14 +193,14 @@ a {
 
 /* Visual Section (Right Side) */
 .hero-visual {
-    flex: 0 1 38%;
+    flex: 0 1 41%;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100%;
     position: relative;
-    padding-top: 2.75rem;
-    padding-right: clamp(1rem, 4vw, 5.5rem);
+    padding-top: 1.25rem;
+    padding-right: clamp(0.5rem, 2vw, 3rem);
     opacity: 0;
     animation: fadeIn 2s ease 0.5s forwards;
 }
@@ -211,12 +211,12 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center;
-    transform: scale(1.08) translateX(-1.5%) translateY(1.5rem);
+    transform: scale(1.3) translateX(clamp(-3rem, -2.6vw, -1.5rem)) translateY(-0.75rem);
     transition: transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .css-bottle:hover {
-    transform: scale(1.12) translateX(-1.5%) translateY(0.85rem);
+    transform: scale(1.34) translateX(clamp(-3rem, -2.6vw, -1.5rem)) translateY(-1.35rem);
 }
 
 .bottle-cap {
