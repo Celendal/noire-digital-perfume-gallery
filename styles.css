@@ -34,7 +34,7 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2rem 4rem;
+    padding: 2.75rem 5.5rem;
     font-size: 0.85rem;
     letter-spacing: 0.05em;
     text-transform: uppercase;
@@ -54,7 +54,7 @@ a {
 
 .nav-links {
     display: flex;
-    gap: 3rem;
+    gap: 3.75rem;
 }
 
 .nav-links a {
@@ -103,24 +103,26 @@ a {
     flex: 1;
     display: flex;
     align-items: center;
-    padding: 0 4rem;
+    justify-content: space-between;
+    gap: clamp(4rem, 8vw, 9rem);
+    padding: 0 5.5rem;
     min-height: 100vh;
     position: relative;
 }
 
 .hero-content {
-    flex: 1;
+    flex: 0 1 54%;
     z-index: 10;
-    padding-top: 5rem;
-    max-width: 50%;
+    padding-top: 4.5rem;
+    max-width: 56rem;
 }
 
 .headline {
     font-family: var(--font-serif);
-    font-size: clamp(4rem, 8vw, 8rem);
+    font-size: clamp(4.6rem, 8.6vw, 9.25rem);
     font-weight: 300;
-    line-height: 1.1;
-    margin-bottom: 4rem;
+    line-height: 0.96;
+    margin-bottom: 5.5rem;
     display: flex;
     flex-direction: column;
 }
@@ -135,13 +137,14 @@ a {
 .headline .line:nth-child(3) { animation-delay: 0.5s; }
 
 .headline .indent {
-    padding-left: 15%;
+    padding-left: 22%;
     font-style: italic;
     color: var(--text-secondary);
 }
 
 .subtext-container {
-    margin-bottom: 4rem;
+    margin-bottom: 3.25rem;
+    margin-left: 22%;
     opacity: 0;
     animation: fadeUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) 0.8s forwards;
 }
@@ -163,6 +166,7 @@ a {
 .cta-button {
     display: inline-flex;
     align-items: center;
+    margin-left: 22%;
     font-size: 0.85rem;
     text-transform: uppercase;
     letter-spacing: 0.1em;
@@ -189,12 +193,13 @@ a {
 
 /* Visual Section (Right Side) */
 .hero-visual {
-    flex: 1;
+    flex: 0 1 36%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     height: 100%;
     position: relative;
+    padding-top: 6rem;
     opacity: 0;
     animation: fadeIn 2s ease 0.5s forwards;
 }
@@ -205,12 +210,12 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center;
-    transform: scale(1.2);
+    transform: scale(1.08) translateX(-4%);
     transition: transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .css-bottle:hover {
-    transform: scale(1.25) translateY(-10px);
+    transform: scale(1.12) translateX(-4%) translateY(-10px);
 }
 
 .bottle-cap {
@@ -349,6 +354,7 @@ a {
     
     .hero {
         flex-direction: column;
+        gap: 0;
         padding: 6rem 1.5rem 2rem;
         justify-content: center;
     }
@@ -370,6 +376,11 @@ a {
     
     .headline .indent {
         padding-left: 0;
+    }
+
+    .subtext-container,
+    .cta-button {
+        margin-left: 0;
     }
     
     .subtext-desc {
