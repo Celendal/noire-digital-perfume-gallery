@@ -205,6 +205,18 @@ a {
     animation: fadeIn 2s ease 0.5s forwards;
 }
 
+.hero-visual::before {
+    content: '';
+    position: absolute;
+    width: clamp(16rem, 24vw, 22rem);
+    height: clamp(18rem, 28vw, 25rem);
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.055) 0%, rgba(255, 255, 255, 0.025) 38%, rgba(255, 255, 255, 0) 72%);
+    transform: translateX(clamp(-4.5rem, calc(-2.6vw - 1.5rem), -3rem)) translateY(-2.25rem);
+    pointer-events: none;
+    z-index: 0;
+}
+
 /* Hero Bottle */
 .hero-bottle {
     display: block;
@@ -214,7 +226,10 @@ a {
     object-fit: contain;
     mix-blend-mode: lighten;
     transform: translateX(clamp(-4.5rem, calc(-2.6vw - 1.5rem), -3rem)) translateY(-2.25rem);
+    filter: drop-shadow(0 1.4rem 2rem rgba(0, 0, 0, 0.28)) drop-shadow(0 0.35rem 0.8rem rgba(255, 255, 255, 0.035));
     transition: transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
+    position: relative;
+    z-index: 1;
 }
 
 .hero-bottle:hover {
