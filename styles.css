@@ -104,17 +104,17 @@ a {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: clamp(4rem, 8vw, 9rem);
-    padding: 0 5.5rem;
+    gap: clamp(5.5rem, 10vw, 12rem);
+    padding: 0 clamp(5.5rem, 7vw, 8rem);
     min-height: 100vh;
     position: relative;
 }
 
 .hero-content {
-    flex: 0 1 54%;
+    flex: 0 1 52%;
     z-index: 10;
-    padding-top: 4.5rem;
-    max-width: 56rem;
+    padding-top: 3.5rem;
+    max-width: 54rem;
 }
 
 .headline {
@@ -122,7 +122,7 @@ a {
     font-size: clamp(4.6rem, 8.6vw, 9.25rem);
     font-weight: 300;
     line-height: 0.96;
-    margin-bottom: 5.5rem;
+    margin-bottom: 6.25rem;
     display: flex;
     flex-direction: column;
 }
@@ -193,13 +193,14 @@ a {
 
 /* Visual Section (Right Side) */
 .hero-visual {
-    flex: 0 1 36%;
+    flex: 0 1 38%;
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     height: 100%;
     position: relative;
-    padding-top: 6rem;
+    padding-top: 2.75rem;
+    padding-right: clamp(1rem, 4vw, 5.5rem);
     opacity: 0;
     animation: fadeIn 2s ease 0.5s forwards;
 }
@@ -210,12 +211,12 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center;
-    transform: scale(1.08) translateX(-4%);
+    transform: scale(1.08) translateX(-1.5%) translateY(1.5rem);
     transition: transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .css-bottle:hover {
-    transform: scale(1.12) translateX(-4%) translateY(-10px);
+    transform: scale(1.12) translateX(-1.5%) translateY(0.85rem);
 }
 
 .bottle-cap {
