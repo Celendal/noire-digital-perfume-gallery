@@ -208,16 +208,17 @@ a {
 /* Hero Bottle */
 .hero-bottle {
     display: block;
-    width: clamp(18rem, 24vw, 22rem);
+    width: clamp(20.16rem, 26.88vw, 24.64rem);
     height: auto;
     max-height: 62vh;
     object-fit: contain;
-    transform: translateX(clamp(-3rem, -2.6vw, -1.5rem)) translateY(-0.75rem);
+    mix-blend-mode: lighten;
+    transform: translateX(clamp(-4.5rem, calc(-2.6vw - 1.5rem), -3rem)) translateY(-2.25rem);
     transition: transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .hero-bottle:hover {
-    transform: translateX(clamp(-3rem, -2.6vw, -1.5rem)) translateY(-1.35rem);
+    transform: translateX(clamp(-4.5rem, calc(-2.6vw - 1.5rem), -3rem)) translateY(-2.85rem);
 }
 
 /* Animations */
